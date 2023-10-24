@@ -25,32 +25,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto text-lg gap-lg-0 gap-2">
-            <li class="nav-item my-auto">
-              <router-link to="/" class="nav-link active">
-                Home
-              </router-link>
-            </li>
-            <li class="nav-item my-auto">
-              <a class="nav-link" href="#">Games</a>
-            </li>
-            <li class="nav-item my-auto">
-              <a class="nav-link" href="#">Rewards</a>
-            </li>
 
-            <li class="nav-item my-auto">
-              <a class="nav-link" href="#">Discover</a>
-            </li>
-            <li class="nav-item my-auto me-lg-20">
-              <a class="nav-link" href="#">Global Rank</a>
-            </li>
-            <li class="nav-item my-auto">
-              <a class="btn btn-sign-in d-flex justify-content-center ms-lg-2 rounded-pill"
-                href="./src/sign-in.html" role="button">Sign
-                In</a>
-            </li>
+            <Menu to="/" title="Home" :namePath="['/']" />
+            <Menu to="/games" title="Games" :namePath="['games']" />
+            <Menu to="/rewards" title="Rewards" :namePath="['rewards']" />
+            <Menu to="/discover" title="Discover" :namePath="['discover']" />
+            <Menu to="/global-rank" title="Global Rank" :namePath="['global-rank']" />
+            
+            <AuthNavbar isLogin />
           </ul>
         </div>
       </div>
     </nav>
   </section>
 </template>
+
+<script setup>
+  import Menu from '@/components/Micro/MenuNavbar.vue'
+  import AuthNavbar from '@/components/Micro/AuthNavbar.vue'
+</script>
